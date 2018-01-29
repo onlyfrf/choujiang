@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			canvas{
+				margin-left: 400px;
+			}
+		</style>
+		<script>
+			onload=function(){
+				var canvas = document.querySelector("canvas");
+				var ctx = canvas.getContext("2d");
+				var i=0;
+				canvas.width=800;
+				canvas.height=800;
+				setInterval(function(){
+					i++;
+					ctx.clearRect(0,0,800,800);
+				//头
+				ctx.arc(150,155,116,0,2*Math.PI,false);
+				ctx.strokeStyle = "black";
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				//脸
+				ctx.beginPath();
+				ctx.arc(150,170,101,0,2*Math.PI,false);
+				ctx.strokeStyle = "#666";
+				ctx.fillStyle = "white";
+				ctx.fill();
+				ctx.save();
+				//左眼
+				ctx.beginPath();
+				ctx.lineWidth=0.7;
+				ctx.scale(1.5,2); 
+				ctx.arc(90, 38, 12, 0, 2 * Math.PI, false);
+				ctx.strokeStyle = "black";
+				ctx.stroke();
+				ctx.fill();
+				//左眼睛
+				ctx.beginPath();
+				ctx.moveTo(98,38);
+				ctx.lineTo(85,32);
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(98,38);
+				ctx.lineTo(85,43);
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(97,38);
+				ctx.lineTo(86,38);
+				ctx.lineWidth = 1.5;
+				ctx.strokeStyle="#666";
+				ctx.stroke();
+				//右眼
+				ctx.beginPath();
+				ctx.lineWidth=0.7; 
+				ctx.arc(117, 38, 12, 0, 2 * Math.PI, false);
+				ctx.strokeStyle = "black";
+				ctx.stroke();
+				ctx.fill();
+				//右眼睛
+				ctx.beginPath(); 
+				ctx.restore();
+				ctx.arc(173, 75, 12, 0, 2 * Math.PI, false);
+				ctx.strokeStyle = "black";
+				ctx.stroke();
+				ctx.fillStyle = "#000000";
+				ctx.fill();
+				ctx.beginPath();
+				ctx.restore();
+					
+				if(i%2==0){
+					ctx.arc(168,75, 4, 0, 2 * Math.PI, false);
+					ctx.strokeStyle = "white";
+					ctx.stroke();
+					ctx.fillStyle = "white";
+					ctx.fill();
+					
+				}else{
+					
+					ctx.arc(180,75,4, 0, 2 * Math.PI, false);
+					ctx.strokeStyle = "white";
+					ctx.stroke();
+					ctx.fillStyle = "white";
+					ctx.fill();
+				}
+				
+				//鼻子
+				ctx.beginPath(); 
+				ctx.restore();
+				ctx.arc(156, 108, 13, 0, 2 * Math.PI, false);
+				ctx.stroke();
+				ctx.fillStyle = "red";
+				ctx.fill();
+				//嘴
+				ctx.beginPath();
+				ctx.moveTo(156, 120);
+				ctx.lineWidth = 3;
+				ctx.lineTo(156,170);
+				ctx.lineTo(86,170);
+				ctx.lineTo(226,170);
+				ctx.strokeStyle = "#808080";
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.lineWidth = 2;
+				ctx.moveTo(226,170);
+				ctx.bezierCurveTo(236,170,246,160,225,155);
+                ctx.stroke();
+                ctx.beginPath();
+				ctx.lineWidth = 2;
+				ctx.moveTo(86,170);
+				ctx.bezierCurveTo(76,170,66,160,85,155);
+                ctx.stroke();
+           
+               
+                ctx.beginPath();
+                
+				ctx.moveTo(96,172);
+				
+                if(i%2==0){
+                	
+					ctx.bezierCurveTo(96,226,216,226,216,172);
+					ctx.stroke();
+					ctx.fillStyle = "#ffc0cb";
+					ctx.fill();
+                }
+                
+                
+				//左须
+				ctx.beginPath();
+				ctx.moveTo(140,125);
+				ctx.lineTo(80,105);
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(140,135);
+				ctx.lineTo(80,150);
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(140,130);
+				ctx.lineTo(80,130);
+				ctx.lineWidth = 1.5;
+				ctx.strokeStyle="#666";
+				ctx.stroke();
+				//右须
+				ctx.beginPath();
+				ctx.moveTo(170,125);
+				ctx.lineTo(230,105);
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(170,135);
+				ctx.lineTo(230,150);
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(170,130);
+				ctx.lineTo(230,130);
+				ctx.lineWidth = 1.5;
+				ctx.strokeStyle="#666";
+				ctx.stroke();
+				//左手
+				ctx.beginPath();
+				ctx.moveTo(90,250);
+				ctx.bezierCurveTo(90,250,70,250,20,300);
+				ctx.strokeStyle="black";
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				ctx.beginPath();
+				ctx.moveTo(20,318);
+				ctx.bezierCurveTo(20,318,50,320,65,308);
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				//左身
+				ctx.beginPath();
+				ctx.moveTo(60,312);
+				ctx.quadraticCurveTo(40,370,60,420);
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				//左脚
+				ctx.beginPath();
+				ctx.moveTo(60,420);
+				ctx.quadraticCurveTo(95,440,133,420);
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(60,435);
+				ctx.quadraticCurveTo(95,460,133,435);
+				ctx.stroke();
+				
+				ctx.beginPath();
+				ctx.moveTo(60,420);
+				ctx.quadraticCurveTo(50,425,60,435);
+				ctx.stroke();
+				
+				ctx.beginPath();
+				ctx.moveTo(133,420);
+				ctx.quadraticCurveTo(143,425,133,435);
+				ctx.stroke();
+				
+				//右手	
+				ctx.beginPath();
+				ctx.moveTo(205,273);
+				ctx.bezierCurveTo(206,273,215,260,215,250);
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				ctx.beginPath();
+				ctx.moveTo(210,266);
+				ctx.quadraticCurveTo(260,210,280,208);
+				ctx.strokeStyle= "#000000";
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+
+				ctx.beginPath();
+				ctx.moveTo(285,225);
+				ctx.quadraticCurveTo(260,280,220,308);
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				//右身
+				ctx.beginPath();
+				ctx.moveTo(220,308);
+				ctx.quadraticCurveTo(240,370,220,420);
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				//右脚
+				ctx.beginPath();
+				ctx.moveTo(220,420);
+				ctx.quadraticCurveTo(180,440,135,420);
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				ctx.beginPath();
+				ctx.moveTo(220,435);
+				ctx.quadraticCurveTo(180,460,134,435);
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(220,420);
+				ctx.quadraticCurveTo(230,425,220,435);
+				ctx.stroke();
+				//身体填充
+				ctx.beginPath();
+				ctx.moveTo(60,312);
+				ctx.lineTo(60,420);
+				ctx.lineTo(220,420);
+				ctx.lineTo(220,308);
+				ctx.lineTo(65,308);
+				ctx.strokeStyle = "#87ceeb";
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(90,250);
+				ctx.lineTo(20,300);
+				ctx.lineTo(20,318);
+				ctx.lineTo(65,308);
+				ctx.lineTo(220,308);
+				ctx.lineTo(205,275);
+				ctx.strokeStyle = "#87ceeb";
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(220,308);
+				ctx.lineTo(285,225);
+				ctx.lineTo(280,208);
+				ctx.lineTo(205,269);
+				ctx.strokeStyle = "#87ceeb";
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(89,250);
+				ctx.lineTo(215,240);
+				ctx.lineTo(200,300);
+				ctx.strokeStyle = "#87ceeb";
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(200,280);
+				ctx.lineTo(215,270);
+				ctx.lineTo(220,300);
+				ctx.strokeStyle = "#87ceeb";
+				ctx.stroke();
+				ctx.fillStyle = "#87ceeb";
+				ctx.fill();
+				//左手掌
+				ctx.beginPath();
+				ctx.restore();
+				ctx.arc(22, 311, 10, 0, 2 * Math.PI, false);
+				ctx.strokeStyle = "black";
+				ctx.stroke();
+				ctx.fillStyle = "white";
+				ctx.fill();
+				//右手掌
+				ctx.beginPath();
+				ctx.restore();
+				ctx.arc(283, 214, 10, 0, 2 * Math.PI, false);
+				ctx.strokeStyle = "black";
+				ctx.stroke();
+				ctx.fillStyle = "white";
+				ctx.fill();
+				//肚子
+				ctx.beginPath();
+				ctx.restore();
+				ctx.arc(143, 320, 65, 0, 2 * Math.PI, false);
+				ctx.strokeStyle = "#666";
+				ctx.stroke();
+				ctx.fillStyle = "white";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(90,310);
+				ctx.quadraticCurveTo(145,400,200,310);
+				ctx.closePath();
+				ctx.stroke();
+				
+				//脖子
+				ctx.beginPath();
+				ctx.moveTo(75,255);
+				ctx.quadraticCurveTo(165,280,218,255);
+				ctx.lineWidth=0.8;
+				ctx.stroke();
+				ctx.fillStyle = "gold";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(75,240);
+				ctx.quadraticCurveTo(75,250,75,255);
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(220,240);
+				ctx.quadraticCurveTo(220,250,220,255);
+				ctx.stroke();
+				
+				ctx.beginPath();
+				ctx.moveTo(220,240);
+				ctx.lineTo(218, 255);
+				ctx.lineTo(75, 255);
+				ctx.lineTo(75, 240);
+				ctx.lineTo(220, 240);
+				ctx.strokeStyle="gold";
+				ctx.stroke();
+				ctx.fillStyle = "gold";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(75,239);
+				ctx.quadraticCurveTo(165,265,220,239);
+				ctx.strokeStyle="black";
+				ctx.stroke();
+				ctx.fillStyle = "white";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.restore();
+				ctx.arc(145, 270, 10, 0, 2 * Math.PI, false);
+				ctx.strokeStyle = "black";
+				ctx.stroke();
+				ctx.fillStyle = "#FFA500";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(135,270);
+				ctx.quadraticCurveTo(145,280,155,270);
+				ctx.stroke();
+				
+				var clg = ctx.createLinearGradient(280,300,350,300);
+				//创建渐变样式
+				clg.addColorStop(0,"green");
+				clg.addColorStop(0.5,"red");
+				clg.addColorStop(1,"gold");
+				ctx.beginPath();
+				
+				
+				
+				
+				 //字体
+	                if(i%2==0){
+	                	ctx.beginPath();
+		                var clg = ctx.createLinearGradient(400,300,700,300);
+						clg.addColorStop(0,"#FF8080");
+						clg.addColorStop(0.25,"#FFFF80");
+						clg.addColorStop(0.5,"#80FF80");
+						clg.addColorStop(0.75,"#80FFFF");
+						clg.addColorStop(1,"#FF80FF");
+	                    ctx.lineWidth = 1;
+	                    ctx.strokeStyle = clg;
+						ctx.font ="72px 微软雅黑";
+	                    ctx.strokeText("我会说话",400,200);
+	                    ctx.stroke();
+	                }else{
+	                	ctx.beginPath();
+		                var clg = ctx.createLinearGradient(400,300,700,300);
+						clg.addColorStop(0,"#00FF80");
+						clg.addColorStop(0.25,"#FF8040");
+						clg.addColorStop(0.5,"#FF80C0");
+						clg.addColorStop(0.75,"#FFFF80");
+						clg.addColorStop(1,"#FF8080");
+	                    ctx.lineWidth = 1;
+	                    ctx.strokeStyle = clg;
+						ctx.font ="72px 微软雅黑";
+	                    ctx.strokeText("眼珠会转",400,200);
+	                    ctx.stroke();
+	                }
+	            },1000)
+			}
+		</script>
+	</head>
+
+	<body>
+		<canvas>您的浏览器不支持，请升级</canvas>
+	</body>
+
+</html>
